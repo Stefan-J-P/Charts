@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your page</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8 offset-6">
+
+            <div class="row">
+                <a class="btn btn-success" href="/votes/create">Vote</a>
+            </div>
+
+            <div class="row">
+                <a class="btn btn-success" href="/statistics/stat1">Show top 10 songs </a>
+            </div>
+
+            <div class="row">
+                <a class="btn btn-success" href="/statistics/stat2">Most popular by genre</a>
+            </div>
+
+            <div class="row">
+                <a class="btn btn-success" href="/statistics/stat3">Most popular by date range</a>
+            </div>
+
+            <!-- Przekierowanie do logowania! -->
+            <div class="row">
+                <a class="btn btn-success" href="/statistics/stat4">Your favorites</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

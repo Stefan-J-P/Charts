@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CREATE USER</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <form
+                    method="post"
+                    th:action="@{/security/register}"
+                    th:object="${user}"
+                    novalidate
+                    enctype="multipart/form-data">
+
+
+                    <div class="form-group">
+                        <label for="email">Username</label>
+                        <input id="email" type="text" class="form-control" th:field="*{email}">
+                    </div>
+
+                    <div th:if="${errors.containsKey('email')}">
+                        <p class="text-danger" th:text="${errors.get('email')}"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" class="form-control" th:field="*{username}">
+                    </div>
+
+                    <div th:if="${errors.containsKey('username')}">
+                        <p class="text-danger" th:text="${errors.get('username')}"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="text" class="form-control" th:field="*{password}"/>
+                    </div>
+
+                    <div th:if="${errors.containsKey('password')}">
+                        <p class="text-danger" th:text="${errors.get('password')}"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordConfirmation">Password Confirmation</label>
+                        <input id="passwordConfirmation" type="text" class="form-control" th:field="*{passwordConfirmation}"/>
+                    </div>
+
+                    <div th:if="${errors.containsKey('passwordConfirmation')}">
+                        <p class="text-danger" th:text="${errors.get('passwordConfirmation')}"></p>
+                    </div>
+
+
+
+                    <div class="form-group">
+                    <label for="role">Role</label>
+                    <ul id="role" class="list-group">
+                        <li class="list-group-item" th:each="role : ${roles}">
+                            <input type="radio" th:field="*{role}" th:value="${role}" class="mr-1"/>
+                            <label th:text="${role.getName()}"></label>
+                        </li>
+                    </ul>
+                </div>
+
+<!--                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <ul id="role" class="list-group">
+                            <li class="list-group-item" th:each="role : ${roles}">
+                                <input type="radio" th:field="*{role}" th:value="${role}" class="mr-1"/>
+                                <label th:text="${role.getName()}"></label>
+                            </li>
+                        </ul>
+                    </div>-->
+
+
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

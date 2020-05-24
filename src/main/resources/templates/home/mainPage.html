@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-6 offset-md-2 mt-5">
+                <h1>Welcome to charts menu!</h1>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/users/create">Register user</a>
+        </div>
+
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/songs/create">Add new song</a>
+        </div>
+
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/statistics/stat1">Show top 10 songs </a>
+        </div>
+
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/statistics/stat2">Most popular by genre</a>
+        </div>
+
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/statistics/stat3">Most popular by date range</a>
+        </div>
+
+        <!-- Przekierowanie do logowania! -->
+        <div class="row mt-3">
+            <a class="btn btn-success" href="/statistics/stat4">Your favorites</a>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
